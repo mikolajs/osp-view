@@ -1,0 +1,148 @@
+<!doctype HTML>
+<html>
+
+<div class="lift:surround?with=viewer;at=content">
+	<head_merge>
+	<link rel="stylesheet" href="/style/course.css">
+	<script type="text/javascript" src="/syntaxhighlighter/shCore.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushBash.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushCpp.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushCss.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushJava.js"></script>
+	<script type="text/javascript"
+		src="/syntaxhighlighter/shBrushJScript.js"></script> <script
+		type="text/javascript" src="/syntaxhighlighter/shBrushPhp.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushPlain.js"></script>
+	<script type="text/javascript"
+		src="/syntaxhighlighter/shBrushPython.js"></script> <script
+		type="text/javascript" src="/syntaxhighlighter/shBrushRuby.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushScala.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushSql.js"></script>
+	<script type="text/javascript" src="/syntaxhighlighter/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet"
+		href="/syntaxhighlighter/shCore.css" />
+	<link type="text/css" rel="stylesheet"
+		href="/syntaxhighlighter/shThemeDefault.css" />
+		<script type="text/javascript" src="/jwplayer/jwplayer.js"></script>
+	<script src="/jquery/dejavu.js"></script> <script
+		type="text/javascript" src="/jquery/showcourse.js"></script>
+ <script
+		type="text/javascript">
+		
+    var showCourse = new Object();
+
+    $(document).ready(function(){
+    	showCourse = new ShowCourse();	
+    });
+    
+
+    </script>
+	<style>
+.hideSidebar {
+	width: 20px;;
+}
+
+#courseInfo {
+	margin: 5px -15px;
+	padding: 5px 30px;
+}
+.chapter {
+ background-color: #DFF0D8;
+}
+.badge {float:left !important; margin-left: 2px; margin-right: 5px;}
+section.notice {
+        background-color: #fbfafb;
+        border-radius: 5px;
+        border: 1px solid #ededed;
+        padding: 10px 5px;
+}
+</style>
+	</head_merge>
+
+	<div class="lift:view.ShowCourseSn.show">
+		<div class="row">
+            <div class="openSidebar">
+                <button type="button" class="btn btn-info btn-lg"
+                        onclick="showCourse.hideSidebar()">
+                    <span class="glyphicon glyphicon-list"></span>
+                </button>
+            </div>
+            <div class="sidebar" id="subjectsList" style="display:none;">
+                <div style="margin: 10px;" class="panel-heading">
+                    <h4 style="display:inline;">Lista tematów:</h3>
+                    <span class="btn glyphicon glyphicon-remove"
+                          style="float:right;"   onclick="showCourse.hideSidebar()"></span>
+
+                </div>
+                <div class="overflowBar">
+
+                    <div class="panel panel-info">
+
+                        <div class="panel-body list-group" id="subjectListLinks"><a></a></div>
+                        <div class="list-group">
+                            <div class="list-group-item" style="text-align:center;">
+
+                                <a  id="addLessonButton" href="/educontent/editlesson" class="btn btn-success">
+                                    <span class="glyphicon glyphicon-plus-sign"></span> Dodaj lekcję
+                                </a>
+                                <button id="sortChaptersButton"  class="btn btn-info">
+                                    <span class="glyphicon glyphicon-th-list"></span> Uporządkuj działy
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<div class="main ">
+				<div id="courseInfo"></div>
+				<div class="content ">
+					<div class="row alert alert-info">
+						<div class="col-md-10">
+							<h1 class="page-header">Temat</h1>
+						</div>
+						<div class="col-md-2">
+
+							<!--  <a href=""  id="run-as-slides"><img src="/images/fullscreen.png" /></a> -->
+						</div>
+					</div>
+					<div class="deck-container">
+						<section id="sections"></section>
+						<section id="extra-info" class="slide"></section>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="width:920px; margin: auto; padding-top: 20px;">	
+
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h4>Wiadomość do nauczyciela</h4></div>
+                <div class="panel-body">
+
+                    <form class="form-horizontal" data-lift="view.ShowCourseSn.sendMessage" method="post">
+                        <div class="form-group">
+                        <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                            <textarea id="writeMessage" rows="4" style="width:100%;" ></textarea></div>
+                            <div class="col-md-1"></div>
+                        </div>
+                        <div class="form-group">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                            <button id="sendMessage" class="btn btn-lg btn-success">
+                                <span class="glyphicon glyphicon-send"></span> Wyślij
+                            </button>
+                            </div>
+                        </div>
+                    </form>
+                    <span data-lift="Msgs?showAll=true"></span>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+</html>
