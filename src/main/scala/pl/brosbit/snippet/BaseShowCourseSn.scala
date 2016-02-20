@@ -11,12 +11,7 @@ import Helpers._
 
 class BaseShowCourseSn  {
 
-  val basePath = "/view/course/"
-
-  val user = User.currentUser match {
-    case Full(user) => user
-    case _ => S.redirectTo("/login")
-  }
+  val basePath = "/course/"
 
   val courseId = S.param("id").openOr("0")
   var lessonId = S.param("l").openOr("0")
@@ -33,9 +28,6 @@ class BaseShowCourseSn  {
   protected def findChapterName(id: Int) = if (course.chapters.contains(id)) course.chapters(id) else "Brak nawy!"
 
   protected def showAsDocument(lesson: LessonCourse, admin: Boolean) = {
-    val infoError = "section" #> <section>
-      <h1>Błąd - nie znaleziono materiału</h1>
-    </section>
 
     val (headWords, restOf) = lesson.contents.partition(x => x.what == "w")
     val (quests, restOf2) = restOf.partition(x => x.what == "q")

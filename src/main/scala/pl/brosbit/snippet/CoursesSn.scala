@@ -18,13 +18,9 @@ class CoursesSn {
       "h2" #> <h2>
         {course.title}
       </h2> &
-        "h3" #> <h3>
-          {course.subjectName}<span class="text-muted classInfo">, Klasy:
-            {course.classInfo}
-          </span>
-        </h3> &
+        "h3" #> <h3>{course.subjectName}</h3> &
         ".courseInfo *" #> course.descript &
-        ".courseLink [href]" #> ("/view/course/" + course._id.toString)
+        ".courseLink [href]" #> ("/course/" + course._id.toString)
     })
   }
 }
