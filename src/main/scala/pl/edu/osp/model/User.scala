@@ -31,10 +31,12 @@ object User extends User with MetaMegaProtoUser[User] {
   override def createUserMenuLoc = Empty
 
   override def editUserMenuLoc = Empty
+  override def logUserIn(who: TheUserType, postLogin: () => Nothing): Nothing = {
+    logUserIn(who)
+    S.redirectTo("/admin")
+    //postLogin()
 
-
-  // override def afterValidation  = List( (user) => { S.redirectTo("/user_mgt/change_password")})
-
+  }
 }
 
 /**

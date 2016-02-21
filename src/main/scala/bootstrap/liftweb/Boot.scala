@@ -66,7 +66,7 @@ class Boot {
 
 
     val isAdmin = If(() => User.loggedIn_? && (User.currentUser.openOrThrowException("Not logged").role.get == "a"),
-      () => RedirectResponse("/user_mgt/login?r=" + S.uri))
+      () => RedirectResponse("/user_mgt/login"))
 
     // Build SiteMap::
     def sitemap() = SiteMap(

@@ -16,7 +16,6 @@ class AdminSn {
     case Full(u) => if(u.role.get == "a") true else false
     case Empty => false
   }
-  println("================ User in admin path admin?  " + admin_?.toString)
 
 
   def show() = {
