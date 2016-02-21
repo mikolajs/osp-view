@@ -3,19 +3,22 @@
 <body class="lift:content_id=main">
 <div id="main" class="lift:surround?with=viewer;at=content">
     <head_merge>
-     <link rel="stylesheet" href="/style/adminsite.css" />
+        <link rel="stylesheet" href="/style/adminsite.css"/>
         <script>
-                   
+
         </script>
     </head_merge>
-    
-    
-<div class="well">
-<h3>Wybór </h3>
-</div>
-
-<div>
 
 
-</div>
-</body></html>
+    <div class="well">
+        <a href="/user/mgt/logout" class="btn btn-danger">Wyloguj!</a>
+        <h3>Kursy do upublicznienia: </h3>
+    </div>
+    <table class="table table-striped">
+        <thead><tr><th>Kurs</th><th>Info</th><th>Udostępnianie</th></tr></thead>
+        <tbody data-lift="AdminSn.show"><tr><td></td></tr></tbody>
+    </table>
+  </div>
+
+</body>
+</html>

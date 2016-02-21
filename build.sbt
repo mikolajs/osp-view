@@ -2,7 +2,7 @@ name := "osp-view"
 
 version := "0.1.0"
 
-organization := "pl.brosbit"
+organization := "pl.edu.osp"
 
 scalaVersion := "2.11.7"
 
